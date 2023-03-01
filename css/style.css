@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(16, 18, 144);
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -16,12 +20,32 @@
 }
 
 #container #carouselContainer #imgContainer {
-    width: 700px;
-    height: 300px;
+    display: flex;
+    width: 1000px;
+    height: 500px;
+}
+
+#container #carouselContainer #imgPreview {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #000000;
+}
+
+#container #carouselContainer #imgPreview img {
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+#container #carouselContainer #imgPreview img.active {
+    opacity: 1;
+    border: 3px solid blue;
 }
 
 #container #carouselContainer #imgContainer #imgActive {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
     object-position: right;

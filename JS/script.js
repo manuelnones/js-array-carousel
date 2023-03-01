@@ -13,8 +13,12 @@ const btnDownElement = document.querySelector(`.btnDown`);
 const imgActiveElement = document.getElementById(`imgActive`);
 const images = [`img/01.webp`, `img/02.webp`, `img/03.webp`, `img/04.webp`, `img/05.webp`, ];
 let index = 0;
+const imgPreviewEl = document.querySelectorAll(`.img`);
 
 btnUpElement.addEventListener(`click`, function () {
+
+    imgPreviewEl[index].classList.remove(`active`);
+    
     if (index == images.length - 1) {
 
         index = 0;
@@ -24,9 +28,14 @@ btnUpElement.addEventListener(`click`, function () {
     }
 
     imgActiveElement.src = images[index];
+
+    imgPreviewEl[index].classList.add(`active`);
 });
 
 btnDownElement.addEventListener(`click`, function () {
+
+    imgPreviewEl[index].classList.remove(`active`);
+
     if (index == 0) {
 
         index = images.length - 1;
@@ -36,4 +45,6 @@ btnDownElement.addEventListener(`click`, function () {
     }
 
     imgActiveElement.src = images[index];
+
+    imgPreviewEl[index].classList.add(`active`);
 });
