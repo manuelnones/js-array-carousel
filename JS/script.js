@@ -15,11 +15,25 @@ const images = [`img/01.webp`, `img/02.webp`, `img/03.webp`, `img/04.webp`, `img
 let index = 0;
 
 btnUpElement.addEventListener(`click`, function () {
-    index++;
+    if (index == images.length - 1) {
+
+        index = 0;
+    } else {
+
+        index++;
+    }
+
     imgActiveElement.src = images[index];
 });
 
 btnDownElement.addEventListener(`click`, function () {
-    index--;
+    if (index == 0) {
+
+        index = images.length - 1;
+    } else {
+
+        index--;
+    }
+
     imgActiveElement.src = images[index];
 });
